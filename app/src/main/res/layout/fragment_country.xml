@@ -18,9 +18,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginTop="10dp"
+            android:contentDescription="@{selectedCountry.countryName}"
             android:downloadUrl="@{selectedCountry.imageURrl}"
             android:minHeight="200dp"
-            android:scaleType="fitCenter"></ImageView>
+            android:scaleType="fitCenter">
+
+        </ImageView>
 
         <TextView
             android:id="@+id/countryName"
@@ -31,7 +34,9 @@
             android:padding="7dp"
             android:text="@{selectedCountry.countryName}"
             android:textSize="20sp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold">
+
+        </TextView>
 
         <TextView
             android:id="@+id/countryCapital"
@@ -41,7 +46,9 @@
             android:layout_centerHorizontal="true"
             android:padding="7dp"
             android:text="@{selectedCountry.countryCapital}"
-            android:textSize="16sp"></TextView>
+            android:textSize="16sp">
+
+        </TextView>
 
         <TextView
             android:id="@+id/countryRegion"
@@ -51,7 +58,9 @@
             android:layout_centerHorizontal="true"
             android:padding="7dp"
             android:text="@{selectedCountry.countryRegion}"
-            android:textSize="16sp"></TextView>
+            android:textSize="16sp">
+
+        </TextView>
 
         <TextView
             android:id="@+id/countryCurrency"
@@ -61,7 +70,9 @@
             android:layout_centerHorizontal="true"
             android:padding="7dp"
             android:text="@{selectedCountry.countryCurrency}"
-            android:textSize="16sp"></TextView>
+            android:textSize="16sp">
+
+        </TextView>
 
         <TextView
             android:id="@+id/countryLanguage"
@@ -71,6 +82,8 @@
             android:layout_centerHorizontal="true"
             android:padding="7dp"
             android:text="@{selectedCountry.countryLanguage}"
-            android:textSize="16sp"></TextView>
+            android:textSize="16sp">
+
+        </TextView>
     </RelativeLayout>
 </layout>

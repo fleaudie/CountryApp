@@ -33,7 +33,10 @@
             android:layout_height="match_parent"
             android:layout_weight="3"
             android:downloadUrl="@{country.imageURrl}"
-            android:padding="3dp"></ImageView>
+            android:padding="3dp"
+            android:contentDescription="@{country.countryName}">
+
+        </ImageView>
 
         <LinearLayout
             android:layout_width="0dp"
