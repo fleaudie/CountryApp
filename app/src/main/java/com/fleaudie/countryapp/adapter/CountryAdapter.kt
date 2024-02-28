@@ -3,12 +3,15 @@ package com.fleaudie.countryapp.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.fleaudie.countryapp.R
 import com.fleaudie.countryapp.model.Country
+import com.fleaudie.countryapp.util.downloadFromUrL
+import com.fleaudie.countryapp.util.placeholderProgressBar
 import com.fleaudie.countryapp.view.FeedFragment
 
 class CountryAdapter(val countryList: ArrayList<Country>): RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
@@ -33,6 +36,7 @@ class CountryAdapter(val countryList: ArrayList<Country>): RecyclerView.Adapter<
         holder.view.setOnClickListener {
             it.findNavController().navigate(R.id.action_feedFragment_to_countryFragment)
         }
+        holder.view.findViewById<ImageView>(R.id.imageView).downloadFromUrL(countryList[position].imageURrl, placeholderProgressBar(holder.view.context))
     }
 
     fun updateCountryList(newCountryList: List<Country>){
