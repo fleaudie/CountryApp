@@ -1,14 +1,19 @@
 package com.fleaudie.countryapp.viewmodel
 
+import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.fleaudie.countryapp.model.Country
+import com.fleaudie.countryapp.service.CountryDatabase
+import kotlinx.coroutines.launch
 
-class CountryViewModel : ViewModel() {
+class CountryViewModel(application: Application) : BaseViewModel(application) {
     val countryLiveData = MutableLiveData<Country>()
 
-    fun getDataFromRoom(){
-        val country = Country("Turkey", "Asia", "Ankara", "TRY", "Turkish", "www.ss.com")
-        countryLiveData.value = country
+    fun getDataFromRoom(uuid: Int){
+        launch {
+            val dao = CountryDatabase(getApplication()).countryDao()
+            val country = dao.getCountry(uuid)
+            countryLiveData.value = country
+        }
     }
 }
